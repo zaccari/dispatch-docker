@@ -6,7 +6,7 @@ MIN_COMPOSE_VERSION='1.19.0'
 MIN_RAM=2400 # MB
 
 DISPATCH_CONFIG_ENV='./.env'
-DISPATCH_EXTRA_REQUIREMENTS='./requirements.txt'
+DISPATCH_EXTRA_REQUIREMENTS='./docker/requirements.txt'
 
 DID_CLEAN_UP=0
 # the cleanup function will be the exit point
@@ -77,7 +77,7 @@ echo "Building and tagging Docker images..."
 echo ""
 # Build the dispatch image first
 docker-compose pull --ignore-pull-failures
-docker build
+
 docker-compose build --force-rm web
 docker-compose build --force-rm
 echo ""
